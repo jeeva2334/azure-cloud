@@ -20,17 +20,6 @@ def allowed_file(filename):
 def index():
     return render_template('login.html')
 
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
-        if username == 'admin' and password == 'password':
-            return redirect(url_for('upload_file'))
-        else:
-            return redirect(url_for('login_error'))
-
-    return render_template('login.html')
 
 
 
